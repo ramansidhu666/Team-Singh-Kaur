@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Property_New1.master.cs" Inherits="Property.Property_New1" %>
+
+
+<%@ Register TagName="Logo" TagPrefix="uc" Src="~/Controls/logo.ascx" %>
+<%@ Register TagName="ContactInfo" TagPrefix="uc" Src="~/Controls/ContactInfo.ascx" %>
+<%@ Register TagName="SearchControl" TagPrefix="uc" Src="~/Controls/SearchControl.ascx" %>
+<%@ Register TagName="SearchBar" TagPrefix="uc" Src="~/Controls/SearchBar.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
+<html>
+<head runat="server">
+    <link id="favicon" runat="server" rel="shortcut icon" type="image/x-icon" />
+ 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=0)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=0)" />
+
+    <meta  id="fbProprtyImage" runat="server" property="og:image" content="" />
+    <meta  id="fbProprtyTitle" runat="server" property="og:title" content="" />
+    <meta  id="fbProprtyUrl" runat="server" property="og:url" content="" />   
+    <meta id="fbProprtyShareType" runat="server" property="og:type" content="" />
+    <meta id="fbProprtyDescription" runat="server" property="og:description" content="" />
+
+    <title><asp:Literal ID="siteTitle" runat="server"></asp:Literal></title> 
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/styleBackup.css" rel="stylesheet" />
+    <link href="css/style_002.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/shortcodes.css" rel="stylesheet" />
+    <link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+    <link href="css/font.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/media-queries.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var docHeight = $(window).height();
+            var footerHeight = $('#one-footer').height();
+            var footerTop = $('#one-footer').position().top + footerHeight;
+
+            if (footerTop < docHeight) {
+                //$('#one-footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="Form2" runat="server">
+   <div id="modalbackground" class="blur"></div>
+    <div class="header_bg prprty_detail_new">
+        <div class="container">
+            <div class="col-md-4 col-sm-4">
+                <div class="header_detail">
+                    <h2>
+                        <asp:Label ID="lblBrkrOneName" runat="server"></asp:Label></h2>
+                     <p>Sales Representative</p>
+                <h5>
+                    <span>Call: 416-858-1596, 647-502-7277, 647-990-1984</span>
+                </h5>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                 <div class="header_logo">
+                    <a href="#">
+                     <img src="images/header_logo.png" /></a>
+                </div>
+                   
+            </div>
+              <div class="col-md-4 col-sm-4">
+             <div class="header_detail_right">
+               
+                     <i class="fa fa-envelope ftr_hdng2"></i>
+                   <asp:Label ID="lblemailid" runat="server"></asp:Label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+   <div class="top_menu_bg" id="myHeader">
+       <div class="container">
+       <div class="row frnt_line_cls">
+                         
+           <div class="col-md-12 col-sm-12">
+                <div class="menu_section">
+                     <asp:Literal ID="dynamicmenus" runat="server"></asp:Literal>
+                </div>
+                    <script type="text/javascript" src="../js/script.js"></script>
+            </div>
+        </div>
+    </div>
+       </div>
+       
+    
+   
+        <div class="inner_banner">
+            <img alt="" src="images/banner-inner.jpg" />
+        </div>
+   
+   <%-- <asp:Button ID="btn_open" runat="server" Text="Show" CssClass="openModal" />--%>
+       <%--  <div class="sticky-containnner">
+   <ul class="stickky">
+   <li>
+				<img title="" alt="" src="images/pin1.png" />
+				<p><a href="" id="btn_open" class="openModal">MLS Search</a></p>
+			</li>
+			<li>
+				<img title="" alt="" src="images/fb1.png" />
+				<p><a href="#">Facebook</a></p>
+			</li>
+			<li>
+				<img title="" alt="" src="images/tw1.png" />
+				<p><a href="#">Twitter</a></p>
+			</li>
+			<li>
+				<img title="" alt="" src="images/li1.png" />
+				<p><a href="#">Google+</a></p>
+			</li>
+			
+		</ul>
+	</div>--%>
+        <div class="container" id="containerdiv">
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+         
+        
+    <div class="fuuter_bg" id="one-footer">
+            <div class="container">
+                <div class="col-md-4 col-sm-4">
+                    <div class="fuuter_logo">
+                        <img src="images/futer_logo2.png" alt="" title="" />
+                    </div>
+                </div>
+               
+              <div class="col-md-8 col-sm-8">
+                    <div class="fuuter_logo2">
+                       <h2>© HomeLife Maple Leaf Realty Ltd., Brokerage *</h2>
+                        <p>80 Eastern Ave #3, Brampton, ON L6W 1X9</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      <div class="fuutr_menu_bg">
+            <div class="container">
+                <div class="col-md-12 col-sm-12">
+                  
+                        <div class="Design_and_developed">
+                        <span>
+
+Copyright 2019 All rights reserved. Toronto Real Estate Board (TREB) assumes no responsibility for the accuracy of any information shown. The information provided herein must only be used by consumers 
+that have a bona fide interest in the purchase, sale or lease of real estate and may not be used for any commercial purpose or any other purpose. <br />
+                            <a href="../PrivacyPolicy.aspx">Privacy Policy</a> | <a href="../admin/adminlogin.aspx">Login</a>  
+</span>
+                        <p>
+                            © 2019 All Rights Reserved &nbsp; &nbsp; Designed & Developed by <a href="www.only4agents.com/">Only4Agents</a>
+                        </p>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+
+    
+
+     <div class="fuutr_phne_bg">
+                <div class="futer_mail_bg">
+                    <div class="futer_mail">
+                        <ul>
+                        <li><a href="tel:416-858-1596">
+                            <img alt="" src="images/mail_icnnn.png" /></a></li>
+                       <li><a href="tel:647-502-7277">
+                            <img alt="" src="images/mbl_icnnn.png" /></a></li>
+                        <li><a href="tel:647-990-1984">
+                            <img alt="" src="images/sms.png" /></a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+     
+        </form>
+</body>
+</html>
+<script>
+    window.onscroll = function () { myFunction() };
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>
+ <script type="text/javascript" src="js/jquery_009.js"></script>
+    <script type="text/javascript" src="js/shortcodes.js"></script> 
+<script>
+    $(function () {
+       
+        $('.openModal').click(function (e) {
+            $('.modal, .modal-backdrop').fadeIn('fast');
+            debugger;
+            e.preventDefault();
+            $('#modalbackground').css('display', 'block');
+            $("body").addClass("modal-open");
+        });
+        $('.close-modal').click(function (e) {
+            $('.modal, .modal-backdrop').fadeOut('fast');
+            $('#modalbackground').css('display', 'none');
+            $("body").removeClass("modal-open")
+        });
+    });
+   
+</script>
